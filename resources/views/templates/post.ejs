@@ -1,0 +1,50 @@
+
+<% include header %>
+<header>
+	<div class="height-large parallax-background">
+
+		<% include social-links %>
+		<% include title %>
+
+	</div>
+</header>
+<main>
+		<div class="row">
+			<div class="small-9 small-centered column">
+				<br>
+
+				<p class="projects grey-text text-darken-3 lighten-3"> <%- decodeURIComponent(postContent) %></p>
+				<br>
+
+
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-10 small-centered column">
+				  <hr style="margin: 40px 0px;">
+				<div id="disqus_thread"></div>
+			</div>
+		</div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+
+var disqus_config = function () {
+this.page.url = "http://www.milgar.net/blog/<%= permalink %>"; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "<%= post_id %>-test"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//milgar.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+<% include footer %>

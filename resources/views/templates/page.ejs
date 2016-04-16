@@ -1,0 +1,31 @@
+
+<% include header %>
+<header>
+	<div class="height-large parallax-background">
+		<% include social-links %>
+
+		<div class="row" style="font-weight:900; text-shadow: 0px 0px 3px #000;">
+			<div style="padding-top:150px" class="medium-8 column">
+				<h1 class="blue-grey-text text-lighten-5">
+					<blockquote><b class="silver"><%= pageTitle %></b></blockquote>
+				</h1>
+				<h6 style="padding-left: 40px;" class="silver">
+					Mehmet Ali İLGAR
+				</h6>
+			</div>
+		</div>
+	</div>
+</header>
+<main>
+		<div class="row">
+			<div class="small-9 small-centered column">
+				<br>
+
+				<p class="projects grey-text text-darken-3 lighten-3"> <%- decodeURIComponent(pageContent) %></p>
+				<br>
+
+
+			</div>
+		</div>
+
+<% include footer %>

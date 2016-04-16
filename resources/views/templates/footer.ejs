@@ -1,0 +1,24 @@
+</main>
+<footer class="footer row">
+	<div class="small-10 small-centered column text-center gray">
+			<% yearCurrent = (new Date()).getFullYear();%>
+			<% yearCreated = 2015;%>
+			Copyright ©
+			<% if( (yearCurrent == yearCreated) == true) { %>
+				<%= yearCreated %>
+			<% } else { %>
+				<%= yearCreated + "-" + yearCurrent %>
+			<% } %>
+
+			  Mehmet Ali ILGAR. All rights reserved.
+			<a class="grey-text text-darken-1 right" href="#!"></a>
+
+	</div>
+</footer>
+<script src="/js/jquery-2.1.4.min.js"></script>
+<script src="/js/foundation.min.js"></script>
+<script>
+	$(document).foundation();
+</script>
+</body>
+</html>

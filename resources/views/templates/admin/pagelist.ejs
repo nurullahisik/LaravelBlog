@@ -1,0 +1,51 @@
+
+<% include header %>
+<% include sidebar %>
+
+
+    <ul class="collection with-header">
+        <li class="collection-header" style="overflow:auto">
+        	<span style="font-size: 250%">Yazılar </span>
+            <a href="/kanepe/posts/post/" class="secondary-content btn-collection  btn"><i class="material-icons right">note_add</i>Yeni Yazı</a>
+        </li>
+
+		<% posts.forEach(function(post) { %>
+        <li class="collection-item" style="overflow:auto">
+                <%= post.title %>
+            <div class="secondary-content">
+                <a href="/kanepe/posts/post/<%= post._id %>" class="btn-collection btn"><i class="material-icons right">description</i>Düzenle</a>
+                <a class="btn-collection  btn"><i class="material-icons right">delete</i>Sil</a>
+                <a class="btn-collection  btn"><i class="material-icons right">send</i>Yazıya Git</a>
+            </div>
+        </li>
+		<% }) %>
+
+    </ul>
+
+<ul class="pagination">
+    <% if(pagination.current == 1) { %>
+		<li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+    <% } else { %>
+		<li class="waves-effect"><a href="/kanepe/posts/<%= (Number(pagination.current)-1) %>"><i class="material-icons">chevron_left</i></a></li>
+    <% } %>
+
+    <% for(var i= pagination.from; i<= pagination.to; i++) { %>
+    	<% if(i==pagination.current){ %>
+    		<li class="active teal"><a href="/kanepe/posts/<%= i %>"> <%= i %> </a></li>
+    	<% } else { %>
+    		<li ><a class="btn-flat grey lighten-4 " href="/kanepe/posts/<%= i %>"><%= i %></a></li>
+    	<% } %>
+    <% } %>
+
+
+    <% if(pagination.current >= pagination.to) { %>
+		<li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+    <% } else { %>
+		<li class="waves-effect"><a href="/kanepe/posts/<%= (Number(pagination.current)+1) %>"><i class="material-icons">chevron_right</i></a></li>
+    <% } %>
+
+
+</ul>
+
+
+<% include footer %>

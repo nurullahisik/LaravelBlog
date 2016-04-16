@@ -1,0 +1,62 @@
+
+<% include header %>
+<% include sidebar %>
+
+<div class="small-10 column">
+	<div class="row">
+		<div class="small-12 column">
+			<span style="font-size: 250%">Yazılar </span>
+			<a href="/kanepe/posts/post/" class="button right">
+				Yeni Yazı
+			</a>
+		</div>
+	</div>
+
+	<% posts.forEach(function(post) { %>
+	<div class="row">
+		<div class="small-5 column">
+			<a href="/kanepe/posts/post/<%= post._id %>"><%= post.title %></a>
+		</div>
+		<div class="small-1 column">
+			<span>Sil </span>
+			<i class="step fi-trash size-24"></i>
+		</div>
+		<div class="small-2 column end">
+			<a href="/blog/<%= post.permalink %>" class="btn">
+				Yazıya Git <i class="fi-arrow-right"></i>
+			</a>
+		</div>
+	</div>
+	<% }) %>
+
+
+	<div class="row">
+		<div class="small-12 column">
+			<ul class="pagination">
+				<% if(pagination.current == 1) { %>
+					<li class="arrow unavailable"><a href="">&laquo;</a></li>
+				<% } else { %>
+					<li class="arrow"><a href="/kanepe/posts/<%= (Number(pagination.current)-1) %>">&laquo;</a></li>
+				<% } %>
+
+				<% for(var i= pagination.from; i<= pagination.to; i++) { %>
+					<% if(i==pagination.current){ %>
+						<li class="current"><a href="/kanepe/posts/<%= i %>"> <%= i %> </a></li>
+					<% } else { %>
+						<li ><a class="" href="/kanepe/posts/<%= i %>"><%= i %></a></li>
+					<% } %>
+				<% } %>
+
+
+				<% if(pagination.current >= pagination.to) { %>
+					<li class="arrow unavailable"><a href="">&raquo;</a></li>
+				<% } else { %>
+					<li class="arrow"><a href="/kanepe/posts/<%= (Number(pagination.current)+1) %>">&raquo;</a></li>
+				<% } %>
+			</ul>
+		</div>
+	</div>
+
+</div>
+
+<% include footer %>

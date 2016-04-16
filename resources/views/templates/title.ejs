@@ -1,0 +1,16 @@
+
+<div class="row" style="font-weight:900; text-shadow: 0px 0px 3px #000;">
+	<div style="padding-top:150px" class="medium-8 column">
+		<h1 class="blue-grey-text text-lighten-5">
+			<blockquote><b class="silver"><%= title %></b></blockquote>
+		</h1>
+		<h6 style="padding-left: 40px;" class="silver">
+			<a class="blue-grey-text text-lighten-3" href="<%= author.link %>">
+				<%= author.name %>
+			</a>
+			<% if(locals.date) { %>
+			<%= ", "+date %>
+			<% } %>
+		</h6>
+	</div>
+</div>

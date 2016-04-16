@@ -1,0 +1,36 @@
+
+
+<% include header %>
+<header>
+	<div class="height-medium parallax-background">
+		<div class="row full-width">
+			<div class="small-2 small-offset-10 column" style="padding:20px">
+				<h3>
+					<a href="/" style="font-weight:900; text-shadow: 0px 0px 2px #000;">Ana Sayfa</a>
+				</h3>
+			</div>
+		</div>
+	</div>
+</header>
+<main>
+	<div class="row">
+
+		<% posts.forEach(function(post) { %>
+		<div class="row">
+			<div class="small-8 small-centered column">
+				<br>
+
+				<p class="intro grey-text text-darken-3 lighten-3">
+					<%= post.title %>
+				</p>
+
+				<p class="projects grey-text text-darken-3 lighten-3"> <%- decodeURIComponent(post.content).substr(0,500) %>
+					<br>
+					<a href="/blog/<%= post.permalink %>" class="collection-item"> Devamı</a>
+				</p>
+			</div>
+		</div>
+		<% }); %>
+	</div>
+
+<% include footer %>
