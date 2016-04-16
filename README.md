@@ -1,4 +1,4 @@
-# LaravelBlog Blog Sitesi tamamlandi
-# Css framework olarak materializecss kullanıldı (http://materializecss.com)
+LaravelBlog Blog Sitesi tamamlandi
+Css framework olarak materializecss kullanıldı (http://materializecss.com)
 
-# Nurullah Işık
+Nurullah Işık
